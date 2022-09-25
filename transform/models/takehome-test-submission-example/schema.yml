@@ -1,0 +1,69 @@
+models:
+	- name: q1
+	  columns:
+		- name: country_name
+			test:
+				- not_null
+				- unique
+				- accepted_values:
+					values:[Singapore, Taiwan, Thailand]
+			description: Primary Key
+		- name: total_gmv
+			test: 
+				-not_null
+			description: NULL when there is no orders at all in this country
+	- name: q2
+	  columns:
+		- name: vendor_name
+			test:
+				- not_null
+				- unique
+				- accepted_values:
+					values:[WS (BM), Canada Paste, I LOVE PIZZAAAAAAAAAAA, PastaPastaPasta, Sweet Chinese Desserts, IC House, 9th Cafe House]
+			description: Primary Key
+		- name: customer_count
+			test:
+				-not_null
+			description: NULL when no orders from any customer for this vendor
+		- name: total_gmv
+			test: 
+				-not_null
+			description: NULL when there is no orders at all for this vendor
+	- name: q3
+	  columns:
+		- name: country_name
+			test:
+				- not_null
+				- unique
+				- accepted_values:
+					values:[Singapore, Taiwan, Thailand]
+			description: Primary Key
+		 name: vendor_name
+			test:
+				- not_null
+				- unique
+				- accepted_values:
+					values:[WS (BM), Canada Paste, I LOVE PIZZAAAAAAAAAAA, PastaPastaPasta, Sweet Chinese Desserts, IC House, 9th Cafe House]
+		- name: total_gmv
+			test: 
+				-not_null
+			description: NULL when there is no orders at all in this country
+	- name: q4
+	  columns:
+		- name: year
+			test:
+				- not_null
+				- unique
+			description: Primary key, NULL when timestamp date is missing
+		 name: vendor_name
+			test:
+				- not_null
+				- unique
+				- accepted_values:
+					values:[WS (BM), Canada Paste, I LOVE PIZZAAAAAAAAAAA, PastaPastaPasta, Sweet Chinese Desserts, IC House, 9th Cafe House]
+		- name: total_gmv
+			test: 
+				-not_null
+			description: NULL when there is no orders in this year for this perticular vendor
+
+
