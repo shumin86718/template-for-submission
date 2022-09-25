@@ -7,6 +7,8 @@ profile: 'test-example' # for connection to data warehouse
 model-paths: ['models']
 
 models:
+    takehome-test-submission-example:
+    +materialized: table
     +persist_docs: # for the table and column descriptions to show on DB
         relation: true
         columns: true

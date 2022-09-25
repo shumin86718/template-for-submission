@@ -1,0 +1,15 @@
+models:
+  - name: q4
+    description: >
+      Answer to Q4 of take home test
+    meta:
+      owner: candidate@foodpanda.com
+    columns:
+      - year
+        description: Year of the orders available.
+      - country_name
+        description: Name of country.
+      - vendor_name
+        description: Name of vendor.
+      - total_gmv
+        description: GMV calculated for each vendor in each year
